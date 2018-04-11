@@ -94,8 +94,9 @@
     }
     
     function game() {
+        gameReset()
 
-        for(var i = 0; i < 100; i++) {
+        while(playerScore < 5 && computerScore < 5) {
             // ask player for weapon of choice
             let playerSelection = prompt("Choose your weapon", "");
             // generate computer choice
@@ -105,12 +106,10 @@
             
             if (playerScore === 5) {
                 console.log("Final score: "+ playerScore + "-" + computerScore)
-                gameReset()
                 return "You won! You were first to score 5 points!";
             }
             else if (computerScore === 5) {
                 console.log("Final score: "+ playerScore + "-" + computerScore)
-                gameReset()
                 return "You lost! Computer scored 5 points before you!";
             }
             // log results of the round played
